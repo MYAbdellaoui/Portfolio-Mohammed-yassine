@@ -15,7 +15,10 @@ Technologies used in the project:
 This is a repository of my portfolio website.
 You can see it in the following link [abdoo.live](https://abdoo.live)
 
-![portfolio image](https://github.com/abdoohossamm/portfolio/blob/main/public/images/projects/portfolio/portfolio1.png?raw=true)
-![portfolio image](https://github.com/abdoohossamm/portfolio/blob/main/public/images/projects/portfolio/portfolio2.png?raw=true)
-![portfolio image](https://github.com/abdoohossamm/portfolio/blob/main/public/images/projects/portfolio/portfolio3.png?raw=true)
+# Portfolio-Mohammed-yassine
+
+![portfolio image 1](https://github.com/MYAbdellaoui/Portfolio-Mohammed-yassine/blob/main/public/images/projects/portfolio/portfolio1.png?raw=true)
+![portfolio image 2](https://github.com/MYAbdellaoui/Portfolio-Mohammed-yassine/blob/main/public/images/projects/portfolio/portfolio2.png?raw=true)
+![portfolio image 3](https://github.com/MYAbdellaoui/Portfolio-Mohammed-yassine/blob/main/public/images/projects/portfolio/portfolio3.png?raw=true)
+
 # Portfolio-Mohammed-yassine
