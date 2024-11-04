@@ -3,10 +3,13 @@ import React from "react";
 import { AiOutlineHome, AiOutlineProject, AiOutlineUser } from "react-icons/ai";
 import { BiMessageSquareDetail } from "react-icons/bi";
 import { RiServiceLine } from "react-icons/ri";
+import { FiGlobe } from "react-icons/fi"; // Icône de traduction
+import LanguageSwitcher from "./LanguageSwitcher";
+import { withTranslation } from 'react-i18next';
 
 class NavBar extends React.Component {
-    constructor(darkMode, setMode) {
-        super(darkMode, setMode);
+    constructor(props) {
+        super(props);
         this.state = {
             activeNav: "#main",
             itemName: '',
@@ -22,9 +25,9 @@ class NavBar extends React.Component {
     }
 
     componentDidMount() {
-        let sections = document.querySelectorAll("section");
+        const sections = document.querySelectorAll("section");
         window.onscroll = () => {
-            let scrollPosition = document.documentElement.scrollTop;
+            const scrollPosition = document.documentElement.scrollTop;
             sections.forEach(section => {
                 if (scrollPosition >= section.offsetTop && scrollPosition < section.offsetTop + section.offsetHeight) {
                     this.setState({ activeNav: `#${section.attributes.id.value}` });
@@ -34,6 +37,8 @@ class NavBar extends React.Component {
     }
 
     render() {
+        const { t } = this.props; // Accès aux traductions
+
         return (
             <nav>
                 <span id="nav-text" className={this.state.itemName === "" ? this.itemNameStyle + " hidden" : this.itemNameStyle}>
@@ -44,7 +49,7 @@ class NavBar extends React.Component {
 
                     <a href="#main"
                        onClick={() => this.setState({ activeNav: '#main' })}
-                       onMouseEnter={() => this.setState({ itemName: "Accueil" })}
+                       onMouseEnter={() => this.setState({ itemName: t("home") })}
                        onMouseLeave={() => this.removeItemName()}
                        className={this.state.activeNav === "#main" ? `${this.activeStyle} ${this.navItemStyle}` : this.navItemStyle}
                     >
@@ -53,7 +58,7 @@ class NavBar extends React.Component {
 
                     <a href="#about"
                        onClick={() => this.setState({ activeNav: '#about' })}
-                       onMouseEnter={() => this.setState({ itemName: "À propos" })}
+                       onMouseEnter={() => this.setState({ itemName: t("about") })}
                        onMouseLeave={() => this.removeItemName()}
                        className={this.state.activeNav === "#about" ? `${this.activeStyle} ${this.navItemStyle}` : this.navItemStyle}
                     >
@@ -62,7 +67,7 @@ class NavBar extends React.Component {
 
                     <a href="#projects"
                        onClick={() => this.setState({ activeNav: '#projects' })}
-                       onMouseEnter={() => this.setState({ itemName: "Projets" })}
+                       onMouseEnter={() => this.setState({ itemName: t("projects") })}
                        onMouseLeave={() => this.removeItemName()}
                        className={this.state.activeNav === "#projects" ? `${this.activeStyle} ${this.navItemStyle}` : this.navItemStyle}
                     >
@@ -71,7 +76,7 @@ class NavBar extends React.Component {
 
                     <a href="#services"
                        onClick={() => this.setState({ activeNav: '#services' })}
-                       onMouseEnter={() => this.setState({ itemName: "Services" })}
+                       onMouseEnter={() => this.setState({ itemName: t("services") })}
                        onMouseLeave={() => this.removeItemName()}
                        className={this.state.activeNav === "#services" ? `${this.activeStyle} ${this.navItemStyle}` : this.navItemStyle}
                     >
@@ -80,15 +85,16 @@ class NavBar extends React.Component {
 
                     <a href="#contact"
                        onClick={() => this.setState({ activeNav: '#contact' })}
-                       onMouseEnter={() => this.setState({ itemName: "Contact" })}
+                       onMouseEnter={() => this.setState({ itemName: t("contact") })}
                        onMouseLeave={() => this.removeItemName()}
                        className={this.state.activeNav === "#contact" ? `${this.activeStyle} ${this.navItemStyle}` : this.navItemStyle}
                     >
                         <BiMessageSquareDetail />
                     </a>
 
+
                     <span className={`${this.navItemStyle} bg-blue-800 text-white dark:bg-blue-100 dark:text-blue-800 cursor-pointer`}
-                          onMouseOver={() => this.setState({ itemName: this.props.darkMode ? "Light Mode" : "Dark Mode" })}
+                          onMouseOver={() => this.setState({ itemName: this.props.darkMode ? t("lightMode") : t("darkMode") })}
                           onMouseLeave={() => this.removeItemName()}
                           onClick={() => this.props.setMode(!this.props.darkMode)}
                     >
@@ -100,4 +106,4 @@ class NavBar extends React.Component {
     }
 }
 
-export default NavBar;
+export default withTranslation()(NavBar);
