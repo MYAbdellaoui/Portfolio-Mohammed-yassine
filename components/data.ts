@@ -302,7 +302,7 @@ export const projects: IProject[] = [
     {
         name: "Hna M3ak",
         image_path: [
-            "/images/projects/Hna M3ak.png",
+            "/images/projects/Hna-M3ak.png",
            
         ],
     
