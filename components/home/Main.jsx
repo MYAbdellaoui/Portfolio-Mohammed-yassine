@@ -10,7 +10,7 @@ const Main = () => {
             {/* Section gauche pour le texte */}
             <div className="md:w-1/2 text-left p-5 flex flex-col justify-center">
                 <h3 className="text-2xl pt-2 dark:text-white">Bonjour, je suis</h3>
-                <h2 className="text-4xl lg:text-5xl py-2 text-blue-600 font-medium">Mohammed Yassine El Abdellaoui</h2>
+                <h2 className="text-4xl lg:text-5xl py-2 text-blue-600 font-medium">Mohammed Yass El Abdellaoui</h2>
                 <h3 className="text-2xl pt-2 dark:text-white">Ingénieur Logiciel & Développeur Fullstack</h3>
                 <div className="text-md py-5 leading-8 text-gray-800 dark:text-white">
                     <p>Je suis étudiant en ingénierie informatique à SupMTI, spécialisé en développement Full-Stack avec des expériences en React js, Spring Boot et Laravel</p>
